@@ -1,0 +1,31 @@
+# DATA SOURCE
+# Set here configurations for the database connection
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/popfood
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    # Keep the connection alive if idle for a long time (needed in production)
+    testWhileIdle: true
+    validationQuery: SELECT 1
+
+  # JPA / HIBERNATE
+  # Show or not log for each sql query
+  jpa:
+    show-sql: true
+    # Hibernate ddl auto (create, create-drop, update): with "create-drop" the database
+    # schema will be automatically created afresh for every start of application
+    hibernate:
+      ddl-auto: create-drop
+
+      # Allows Hibernate to generate SQL optimized for a particular DBMS
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+
+   # palavra passe do token (segredo) necessita de no minimo 32 caracteres
+  jwt:
+    validity: 3600000
+    secret: RXhpc3RlIHVtYSB0ZW9yaWEgcXVlIGRpeiBxdWUsIHNlIHVtIGRpYSBhbGd16W0gZGVzY29icmlyIGV4YXRhbWVudGUgcGFyYSBxdWUgc2VydmUgbyBVbml2ZXJzbyBlIHBvciBxdWUgZWxlIGVzdOEgYXF1aSwgZWxlIGRlc2FwYXJlY2Vy4SBpbnN0YW50YW5lYW1lbnRlIGUgc2Vy4SBzdWJzdGl0de1kbyBwb3IgYWxnbyBhaW5kYSBtYWlzIGVzdHJhbmhvIGUgaW5leHBsaWPhdmVsLiBFeGlzdGUgdW1hIHNlZ3VuZGEgdGVvcmlhIHF1ZSBkaXogcXVlIGlzc28gauEgYWNvbnRlY2V1Li4u
+
