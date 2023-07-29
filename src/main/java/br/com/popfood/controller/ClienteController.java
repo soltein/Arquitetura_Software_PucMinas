@@ -23,7 +23,7 @@ public class ClienteController {
 	@GetMapping("/cliente")
 	@SecurityRequirement(name = "Bearer")
 	public String cliente() {
-		return "teste";
+		return "Exemplo de retorno de acesso a área do cliente";
 	}
 	
     @PostMapping("/login")
